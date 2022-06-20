@@ -34,4 +34,127 @@
 .texto-borde {
   -webkit-text-stroke: 2px rgb(65, 64, 64);
   color: transparent; 
+
+}
+.log-out{
+  margin-left: auto;
+}
+.red-text{
+  color: red;
+}
+.w-text{
+  color: white;
+}
+.conteiner-present{
+  width: 500px;
+  box-shadow: 10px 5px 20px rgba(15, 15, 15, 0.568);
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 110px;
+  align-items: flex-start;
+  height: 200px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #0e0d0d;
+  border-radius: 20px;
+
+}
+.bg-gris{
+  background-color: #525252;
+}
+.texto-borde-negro{
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+  color: transparent; 
+
+}
+.contenedor{
+  display: flex;
+  width: 500px;
+  height: 40px;
+  font-size: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  position: absolute;
+  top: 20%;
+  right: 30%;
+  margin: auto;
+  color: rgb(0, 0, 0);
+  
+
+
+}
+.ul-anim{
+  list-style: none;
+  padding-left: 0px;
+  animation:cambiar 7s infinite;
+}
+.ul-anim, p{
+  margin: 0;
+
+}
+@keyframes cambiar{
+  0%{
+    margin-top:  0;
+  }
+  20%{
+    margin-top:  0;
+  }
+  
+  25%{
+    margin-top: -40px;
+
+  }
+  50%{
+    margin-top: -40px;
+  }
+  55%{
+    margin-top: -80px;
+  }
+  80%{
+    margin-top: -80px;
+  }
+  85%{
+    margin-top: -40px;
+  }
+  95%{
+    margin-top:  -40px;
+  }
+  100%{
+    margin-top: 0;
+  }
+}
+.bg-funciones{
+background: #abbaab;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}	
+.font{
+  font-family: 'Fascinate', sans-serif;
+}
+.texto-borde-blanco{
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+
+}
+.font-j{
+  font-family: 'Noto Serif JP', serif;
+}
+.copy{
+  position: absolute;
+  bottom: -40px;
+  right: 10px;
+}
+.bg-conteiner{
+  background: #f00000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f00000, #dc281e); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f00000, #eb645d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.bg-fondo{
+  z-index:0 ;
+  background-color: #0e0d0d;
+  height: 665px;
+  background-image:url("https://s1.1zoom.me/b5353/683/Fast_food_Hamburger_Vegetables_Bottle_530823_1920x1080.jpg");
+  background-size:auto;
 }

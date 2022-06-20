@@ -10,6 +10,7 @@ class usuario(db.Model):
     nombre =db.Column(db.String(80),nullable = False)
     correo = db.Column(db.String(120),unique = True, nullable = False)
     clave =db.Column(db.String(120),nullable = False)
+    
 
 class receta(db.Model):
     __tablename__ = "receta"

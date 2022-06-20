@@ -18,12 +18,6 @@
     />
     <link rel="icon" href="https://www.nicepng.com/png/full/119-1192120_silueta-de-espaldas-de-don-quijote-y-sancho.png"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     
 
     <title>Sancho Panza</title>
@@ -107,54 +101,45 @@
 
 
     </div>
-    
-    
-  <div class="contenedor">
-      <ul class="ul-anim">
-        <li class="font texto-borde-blanco">
-          
-          Bienvenid@
-
-
-        </li>
-        <li class="font texto-borde-blanco">Welcome</li>
-        <li class="font-j texto-borde-blanco">ようこそ</li>
-      </ul>
-      <h2 class=" ml-2 font texto-borde-blanco">
-        {{Nombre}}
-      </h2>
-    </div>
-
-    
-    <div class="conteiner-present bg-conteiner">
-      <div class="container">
-      
-        
-        
-        <p class="text-white">
-          En esta pagina podras ingresar recetas y consultar las recetas mas populares. Al final de cada mes, el usuario que compartió la receta con más 👍 recibe como premio una cena gratis.
-        </p>
+    <form action="/pagina_principal">
+      <div class="form-group">
+        <label  class="w-text" for="exampleFormControlInput1">Nombre de la receta</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ratatouille">
       </div>
-      
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Example select</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="w-text" for="exampleFormControlTextarea1">Elaboracion</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <button
+            type="submit"
+            class="btn btn-dark mb-3 mt-2"
+            style="width: 100%"
+          >
+            Ingresar
+          </button>
+    </form>
+    
 
-    </div>
-    <small id="emailHelp" class="form-text  text-light  copy">
-      © 2022 Copyright: BabsiaPeña & Asociados
-      </small>
-      
-  
-      
 
-      
 
-    
-    <!-- button that say hello -->
-    
-    
-    
-    
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
+
+
+
+
+
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -170,7 +155,4 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-       
   </body>
-  
-</html>
