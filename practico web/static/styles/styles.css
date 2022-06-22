@@ -61,6 +61,34 @@
   border-radius: 20px;
 
 }
+.cuadrito-receta{
+  width: 1350px;
+  box-shadow: 10px 5px 20px rgba(15, 15, 15, 0.568);
+  display: flex-start;
+  justify-content: flex-start;
+  height: 200px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #0e0d0d;
+  border-radius: 20px;
+  
+
+}
+
+.cuadrito-receta-nombre{
+  width: 1350px;
+  box-shadow: 10px 5px 20px rgba(15, 15, 15, 0.568);
+  display: flex;
+  justify-content: flex-start;
+  height: 75px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #0e0d0d;
+  border-radius: 20px;
+  font-size: 40px;
+  
+
+}
 .bg-gris{
   background-color: #525252;
 }
@@ -157,4 +185,26 @@ background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, F
   height: 665px;
   background-image:url("https://s1.1zoom.me/b5353/683/Fast_food_Hamburger_Vegetables_Bottle_530823_1920x1080.jpg");
   background-size:auto;
+}
+.bg-ranking{
+  background: #bdc3c7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #bdc3c7, #2c3e50); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #bdc3c7, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.txt-center{
+  text-align: center;
+}
+.font2{
+  font-family: 'Staatliches', cursive;
+}	
+.table-ranking{
+ width: 800px;
+ display: flex;
+ justify-content: flex-start;
+}
+.bg-time{
+background: #a73737;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #7a2828, #a73737);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #7a2828, #a73737); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }

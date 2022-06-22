@@ -18,6 +18,12 @@
     />
     <link rel="icon" href="https://www.nicepng.com/png/full/119-1192120_silueta-de-espaldas-de-don-quijote-y-sancho.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
     
 
     <title>Sancho Panza</title>
@@ -60,7 +66,7 @@
               Consultar por
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/ConsultarRanking">Mas Likes</a>
+              <a class="dropdown-item" href="/ConsultarRanking">Ranking</a>
               <a class="dropdown-item" href="/ConsultarReceta">Tiempo de elaboracion</a>
               <a class="dropdown-item" href="/ConsultarRecetaIngrediente">Ingrediente</a>
             </div>
@@ -97,34 +103,79 @@
 
     </nav>
     
-    
+    <div class = 'cuadrito-receta-nombre bg-conteiner w-text'>
+       
+        <div>
+          
+            
+               {{receta.nombre}}
+        </div>
+        <div class='ml-5'style = 'float:left'>
+          <form action="/megusta" method="POST">
 
+            <input type="hidden" name="id" value="{{receta.id}}">
+            <button type="submit" class="btn btn-primary btn-dark " >Me Gusta
+            </button>
+            <a href = '/pagina_principal' class="float:left ml-4">
+              <button type="button" class="btn btn-dark md-1">
+                  Volver
+              </button>
+            </a>
 
+            
+
+            </form>
+          
+            
+      
+        </div>
     </div>
-    <form action="/recetaingresada" method ="post">
-      <div class="form-group">
-        <label  class="w-text" for="exampleFormControlInput1">Nombre de la receta</label>
-        <input name="nombre" class="form-control" id="exampleFormControlInput1" placeholder="Ratatouille">
-      </div>
-      <div class="form-group">
-        <label  class="w-text" for="exampleFormControlInput1">Tiempo de elaboracion en minutos</label>
-        <input name="tiempo" class="form-control" id="exampleFormControlInput1" placeholder="1">
-      </div>
+        
+
+    <div class="cuadrito-receta bg-conteiner">
+        <div class="container">
+        
+          
+          
+          <p class="text-white">
+            Tiempo de elaboracion: {{receta.tiempo}} minutos.                           👍:{{receta.cantidadmegusta}}
+            
+          
+          </p>
+          <p class = 'text-white'>
+            Elaboracion:
+            {{receta.elaboracion}}
+          </p>
+          <p class = 'text-white'>
+            
+            Usuario que compartio: {{receta.usuario.nombre}}
+          </p>
+
+        </div>
+
+
+     </div>
     
-      <div class="form-group">
-        <label class="w-text" for="exampleFormControlTextarea1">Elaboracion</label>
-        <textarea name='elaboracion' class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
-      <button
-            type="submit"
-            class="btn btn-dark mb-3 mt-2"
-            style="width: 100%"
-          >
-            Ingresar
-          </button>
-    </form>
-
-
+        <div>
+          <table class="table table-striped bg-time">
+            <thead>
+              <tr>
+                <th class="txt-center w-text" scope="col">Ingrediente</th>
+                <th class="txt-center" scope="col">Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for ingrediente in receta.ingrediente %}
+              <tr>
+                <td class="txt-center w-text">{{ingrediente.nombre}}</td>
+                <td class="txt-center w-text">{{ingrediente.cantidad}} {{ingrediente.unidad}}</td>
+                  </a></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+               
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -140,4 +191,7 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+       
   </body>
+  
+</html>

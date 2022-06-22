@@ -10,6 +10,7 @@ class usuario(db.Model):
     nombre =db.Column(db.String(80),nullable = False)
     correo = db.Column(db.String(120),unique = True, nullable = False)
     clave =db.Column(db.String(120),nullable = False)
+    receta = db.relationship('receta',backref ='usuario',cascade = 'all, delete-orphan')
     
 
 class receta(db.Model):
@@ -18,9 +19,10 @@ class receta(db.Model):
     nombre = db.Column(db.String(100),nullable = False)
     tiempo = db.Column(db.Integer,nullable = False)
     elaboracion = db.Column(db.String(100),nullable = False)
-    cantidadMG = db.Column(db.Integer,nullable = False)
+    cantidadmegusta = db.Column(db.Integer,nullable = False)
     fecha = db.Column(db.Date,nullable = False)
-    userID = db.Column(db.Integer,db.ForeignKey('usuarios.id'))
+    usuarioid = db.Column(db.Integer,db.ForeignKey('usuario.id'))
+    ingrediente = db.relationship('ingrediente',backref ='receta',cascade = 'all, delete-orphan')
 
 class ingrediente(db.Model):
     __tablename__ = "ingrediente"
@@ -28,4 +30,4 @@ class ingrediente(db.Model):
     nombre = db.Column(db.String(80),nullable = False)
     cantidad = db.Column(db.Integer,nullable = False)
     unidad = db.Column(db.Integer,nullable = False)
-    recetaID = db.Column(db.Integer,db.ForeignKey('recetas.id'))
+    recetaID = db.Column(db.Integer,db.ForeignKey('receta.id'))
