@@ -2,19 +2,21 @@
 from datetime import datetime
 from re import template
 from venv import create
-from flask import Flask
+from flask import Flask, redirect
 from flask import render_template
-from flask import request
+from flask import request,url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import false
 from werkzeug.security import generate_password_hash,check_password_hash
 import hashlib
-from almacenamiento import usuarioprueba
+from almacenamiento import usuarioprueba,recetaprueba
 from datetime import date
 
 sesion=usuarioprueba()
 app=Flask(__name__)
 app.config.from_pyfile("config.py")
+mg='no'
+id1=recetaprueba()
 
 from models import db
 from models import usuario,receta,ingrediente
@@ -98,15 +100,18 @@ def recetasTiempoElaboracion():
 
 @app.route('/infoReceta',methods = ['GET','POST'])
 def infoReceta():
-    
-    return render_template('InfoReceta.html',Nombre=sesion.unusuario.nombre,receta = receta.query.filter_by(id=request.form['id']).first())
+    idreceta = int(request.form['id'])
+    return render_template('InfoReceta.html',Nombre=sesion.unusuario.nombre,receta = receta.query.filter_by(id=idreceta).first())
 @app.route('/megusta',methods = ['GET','POST'])
 def megusta():
     
     receta.query.filter_by(id=request.form['id']).first().cantidadmegusta += 1
     db.session.commit()
+    return redirect('pagina_principal')
     
-    return render_template('InfoReceta.html',Nombre=sesion.unusuario.nombre,receta = receta.query.filter_by(id=request.form['id']).first())
+
+    
+    
 
 #Consultar receta por ingrediente ingresado atraves de NavBar
 @app.route('/ConsultarRecetaIngrediente',methods = ['GET','POST'])
