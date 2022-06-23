@@ -127,11 +127,18 @@
             
       
         </div>
-        <a href = '/ConsultarReceta' class="float:left ml-4">
-          <button type="button" class="btn btn-dark md-1">
+        <div>
+          {%if name == 'info1' %}
+          <button type="button" class="btn btn-dark ml-1 btn-primary" onclick="history.back()">
               Volver
           </button>
-        </a>
+          {%else%}
+          <button type="button" class="btn btn-dark ml-1 btn-primary" onclick="history.go(-2)">
+              Volver
+          </button>
+          {%endif%}
+        </div>
+        
     </div>
         
 

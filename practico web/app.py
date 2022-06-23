@@ -101,14 +101,20 @@ def recetasTiempoElaboracion():
 @app.route('/infoReceta',methods = ['GET','POST'])
 def infoReceta():
     idreceta = int(request.form['id'])
-    return render_template('InfoReceta.html',Nombre=sesion.unusuario.nombre,receta = receta.query.filter_by(id=idreceta).first())
+    name="info1"
+    return render_template('InfoReceta.html',Nombre=sesion.unusuario.nombre,receta = receta.query.filter_by(id=idreceta).first(),name=name)
 @app.route('/megusta',methods = ['GET','POST'])
 def megusta():
     
     receta.query.filter_by(id=request.form['id']).first().cantidadmegusta += 1
+    id1.id = request.form['id']
     db.session.commit()
-    return redirect('pagina_principal')
-    
+    return redirect('/infoReceta2')
+@app.route('/infoReceta2',methods = ['GET','POST'])
+def infoReceta2():
+    idreceta = id1.id
+    name="info2"
+    return render_template('InfoReceta.html',Nombre=sesion.unusuario.nombre,receta = receta.query.filter_by(id=idreceta).first(),name=name)   
 
     
     
@@ -121,7 +127,8 @@ def consultarRecetaPorIngrediente():
 @app.route('/RecetaPorIngrediente',methods = ['GET','POST'])
 def mostrarRecetasPorIngrediente():
     nombreI =request.form['NombreIngrediente'].capitalize()
-    receta1= receta.query.filter(receta.ingrediente.any(ingrediente.nombre == nombreI)).all()
+    nombreI="%{}%".format(nombreI)
+    receta1= receta.query.join(receta.ingrediente).filter(ingrediente.nombre.like(nombreI)).all()
     return render_template("ConsultarIngrediente.html", Nombre=sesion.unusuario.nombre,recetas = receta1)
 
 
